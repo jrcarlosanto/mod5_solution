@@ -1,0 +1,39 @@
+
+<div class="container myInfo">
+    <span ng-if="myinfoCtrl.user==''">
+        Not Signed Up Yet. Sign up Now!
+        <di>
+            <a ui-sref="public.signup"> Sign up Now!</a>
+        </di>
+    </span>
+
+    <span ng-if="myinfoCtrl.user!=''">
+        <h1 class="center"> My Info</h1>
+        <div>
+            Fast Name: {{myinfoCtrl.user.fistName}}<br>
+            Last Name: {{myinfoCtrl.user.lastName}} <br>
+            Email: {{ myinfoCtrl.user.email}} <br>
+            Phone: {{ myinfoCtrl.user.phone }}<br>
+        </div>
+        <h2 class="center"> Favorite Item</h2>
+        <br>
+        <div class="menu-item-tile col-md-6">
+            <div class="row position">
+              <div class="col-sm-5">
+                <div class="menu-item-photo">
+                  <div>{{myinfoCtrl.user.shortName.shortName.short_name}}</div>
+                  <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{myinfoCtrl.user.shortName.shortName.category_short_name}}/{{myinfoCtrl.user.shortName.shortName.category_short_name}}.jpg" alt="{{myinfoCtrl.user.shortName.shortName.name}}">
+                </div>
+                <div class="menu-item-price">{{myinfoCtrl.user.shortName.shortName.price_small | currency}}<span> {{myinfoCtrl.user.shortName.shortName.small_portion_name}}</span> {{myinfoCtrl.user.shortName.shortName.price_large | currency}} <span>{{myinfoCtrl.user.shortName.shortName.large_portion_name}}</span></div>
+              </div>
+              <div class="menu-item-description col-sm-7">
+                <h3 class="menu-item-title">{{myinfoCtrl.user.shortName.shortName.name}}</h3>
+                <p class="menu-item-details">{{myinfoCtrl.user.shortName.shortName.description}}</p>
+              </div>
+            </div>
+            <hr class="visible-xs">
+          </div>
+          
+    </span>
+</div>
+
