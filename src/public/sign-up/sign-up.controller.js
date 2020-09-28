@@ -15,16 +15,13 @@ function SignUpController(SignUpService){
       var promise = SignUpService.getDish(reg.shortName);
       promise.then(function(response){
         date = response;
-      //if(date){
         reg.completed = 1;
         SignUpService.createMyInfo(reg.fistName,reg.lastName,reg.email,reg.phone,date);
-      //} else{
       })
       .catch(function (error) {
         reg.completed = 2;
         console.log(error.data);
-      //}
-    })//;
+    })
     };
 }
 })();
