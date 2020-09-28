@@ -10,8 +10,6 @@
         console.log("my info contoller",myInfo);
         myinfoCtrl.user = myInfo;
         myinfoCtrl.user.shortName = myInfo.shortName;
-
-        console.log('info',myinfoCtrl.user.shortName);
         
     }
     })();
